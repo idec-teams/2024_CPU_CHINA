@@ -1,0 +1,600 @@
+@import "compass/css3";
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif, serif;
+    font-weight: 400;
+    font-size: 1.7em;
+    line-height: 1.7;
+    background-color: #3F3E45;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    font: 1.7em/1 'Times New Roman', Times, serif, serif;
+    margin-bottom: .667em;
+  }
+  h2 {
+    font: 1.9em/1 'Times New Roman', Times, serif, serif;
+    text-transform: uppercase;   /* 大写 */
+    margin-bottom: .667em;
+  }
+  p {
+    margin-bottom: 1.2em;
+  }
+
+::selection {
+    background-color: #f41d6d; 
+    color: white; 
+}
+
+/* 导航栏 */
+.hoverable {
+    display: inline-block;
+    backface-visibility: hidden;
+    vertical-align: middle;
+    position: relative;
+    box-shadow: 0 0 1px rgba(255,255,255, 0);
+    tranform: translateZ(0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+
+.hoverable:before {
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+    content: "";
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    background: -webkit-radial-gradient(center, ellipse, rgba(255,255,255, 0.35) 0%, rgba(255,255,255, 0) 80%);
+    background: radial-gradient(ellipse at center, rgba(255,255,255, 0.35) 0%, rgba(255,255,255, 0) 80%);
+    /* W3C */
+    transition-duration: 0.3s;
+    transition-property: transform, opacity;
+}
+
+.hoverable:hover, .hoverable:active, .hoverable:focus {
+    transform: translateY(-5px);
+}
+
+.hoverable:hover:before, .hoverable:active:before, .hoverable:focus:before {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+@keyframes bounce-animation {
+    16.65% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+    }
+    33.3% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+    }
+    49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    }
+    66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+    }
+    83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+    }
+    100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    }
+}
+.bounce {
+    animation-name: bounce-animation;
+    animation-duration: 2s;
+}
+    /* 调整位置 */
+.navbar-inverse {
+    border: none;
+}
+
+.navbar-nav>li>a {
+    padding-top: 5vh;
+    padding-bottom: 15px;
+}
+
+.container-fluid {
+    margin-right: 6.5vh;
+    font-weight: 600;
+    text-align: center !important;
+    color: white;
+    font-size: 2vh;
+    }
+
+/*everything below here is just setting up the page, so dont worry about it */
+@media (min-width: 768px) {
+    .navbar {
+    text-align: center !important;
+    float: none;
+    display: inline-block;
+    }
+}
+
+nav {
+    background: none !important;
+    text-transform: uppercase;
+}
+nav li {
+    margin-left: 3em;
+    margin-right: 3em;
+}
+nav li a {
+    transition: 0.5s color ease-in-out;
+}
+
+.page-title {
+    opacity: 0.75 !important;
+}
+
+/* logo */
+#logo {
+    position: absolute;
+    top: 12px;
+    right: 28px;
+}
+
+#logo img {
+    width: 14vh; 
+    height: auto; 
+}
+
+/* END */
+
+/* 文章主体 */
+.main {
+    padding: 1.5em 3em 1.5em 1.5em;    /* 内边距 */
+    color: #3F3E45;
+}
+
+ /* responsive layout */
+ @media (min-width:700px) {
+  .candy-wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+    margin-top: 6vh;
+    position: relative;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+
+  
+  .main {
+    display: inline-block;
+    font-size: 1.45em;
+    width: 100%;
+    vertical-align: top;
+  }
+
+}
+
+
+/* Team界面的设定*/
+.TeamMain{
+  padding: 1.5em 3em 1.5em 1.5em;    /* 内边距 */
+  color: #3F3E45;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+}
+
+/* Team member list */
+* {
+  font-family: Nunito, sans-serif;
+}
+
+.text-blk {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  line-height: 25px;
+}
+
+.text-position{
+  font-size: 30px;
+  line-height: 32px;
+  text-align: center;
+}
+
+.blank{
+  height: 90px;
+  display: block;
+  width: 100%;
+}
+
+.classification{
+  width: 100%;
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  justify-content: flex-start;
+}
+
+.container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  display: block;
+}
+
+.responsive-cell-block {
+  min-height: 75px;
+}
+
+.TeamContainer {
+  max-width: 90em;
+  margin-top: 80px;
+  margin-right: auto;
+  margin-bottom: 80px;
+  margin-left: auto;
+  padding-top: 0px;
+  padding-right: 30px;
+  padding-bottom: 0px;
+  padding-left: 30px;
+}
+
+.team-head-text {
+  font-size: 48px;
+  line-height: 50px;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 70px;
+  margin-left: 0px;
+}
+
+.name {
+  font-size: 18px;
+  margin-top: 11px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  font-weight: 700;
+}
+
+.position {
+  margin-top: 5px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+.team-card-container {
+  width: 263px;
+  margin-top: 0px;
+  margin-right: 15px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+}
+
+.teamcard-container {
+  justify-content: space-evenly;
+}
+
+.team-img-wrapper {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  width: 243px;
+  height: 243px;
+}
+
+.team-img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+@media (max-width: 500px) {
+  .team-card-container {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .team-img {
+    width: 100%;
+  }
+}
+
+/* 标签页 */
+.tabs {
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  padding: 50px;
+  padding-bottom: 80px;
+  width: 100%;
+  border-radius: 5px;
+  min-width: 240px;
+}
+
+.tabs input[name=tab-control] {
+  display: none;
+}
+
+.tabs .content section h2,
+.tabs ul li label {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 18px;
+  color: #428bff;
+}
+
+.content .poster{
+  width: 100%;
+  border-radius: 5px;
+}
+
+.tabs ul {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.tabs ul li {
+  box-sizing: border-box;
+  flex: 1;
+  width: 25%;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.tabs ul li label {
+  transition: all 0.3s ease-in-out;
+  color: #929daf;
+  padding: 5px auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.tabs ul li label br {
+  display: none;
+}
+
+.tabs ul li label svg {
+  fill: #929daf;
+  height: 1.2em;
+  vertical-align: bottom;
+  margin-right: 0.2em;
+  transition: all 0.2s ease-in-out;
+}
+.tabs ul li label:hover, .tabs ul li label:focus, .tabs ul li label:active {
+  outline: 0;
+  color: #bec5cf;
+}
+.tabs ul li label:hover svg, .tabs ul li label:focus svg, .tabs ul li label:active svg {
+  fill: #bec5cf;
+}
+  /* 悬停选择栏 */
+  .tabs .slider {
+    position: relative;
+    width: 25%;
+    transition: all 0.33s cubic-bezier(0.38, 0.8, 0.32, 1.07);
+  }
+  .tabs .slider .indicator {
+    position: relative;
+    width: 50px;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 4px;
+    background: #428bff;
+    border-radius: 1px;
+  }
+
+  /* 切换机制 */
+  .tabs .content {
+    margin-top: 30px;
+  }
+  .tabs .content section {
+    display: none;
+    -webkit-animation-name: content;
+            animation-name: content;
+    -webkit-animation-direction: normal;
+            animation-direction: normal;
+    -webkit-animation-duration: 0.3s;
+            animation-duration: 0.3s;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    line-height: 1.4;
+  }
+  .tabs .content section h2 {
+    color: #428bff;
+    display: none;
+  }
+  .tabs .content section h2::after {
+    content: "";
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #428bff;
+    margin-top: 5px;
+    left: 1px;
+  }
+  .tabs input[name=tab-control]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label {
+    cursor: default;
+    color: #428bff;
+  }
+  .tabs input[name=tab-control]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label svg {
+    fill: #428bff;
+  }
+
+  @media (max-width: 600px) {
+    .tabs input[name=tab-control]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label {
+      background: rgba(0, 0, 0, 0.08);
+    }
+  }
+  .tabs input[name=tab-control]:nth-of-type(1):checked ~ .slider {
+    transform: translateX(0%);
+  }
+  .tabs input[name=tab-control]:nth-of-type(1):checked ~ .content > section:nth-child(1) {
+    display: block;
+  }
+  .tabs input[name=tab-control]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label {
+    cursor: default;
+    color: #428bff;
+  }
+  .tabs input[name=tab-control]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label svg {
+    fill: #428bff;
+  }
+  @media (max-width: 600px) {
+    .tabs input[name=tab-control]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label {
+      background: rgba(0, 0, 0, 0.08);
+    }
+  }
+  .tabs input[name=tab-control]:nth-of-type(2):checked ~ .slider {
+    transform: translateX(100%);
+  }
+  .tabs input[name=tab-control]:nth-of-type(2):checked ~ .content > section:nth-child(2) {
+    display: block;
+  }
+  .tabs input[name=tab-control]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label {
+    cursor: default;
+    color: #428bff;
+  }
+  .tabs input[name=tab-control]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label svg {
+    fill: #428bff;
+  }
+  @media (max-width: 600px) {
+    .tabs input[name=tab-control]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label {
+      background: rgba(0, 0, 0, 0.08);
+    }
+  }
+  .tabs input[name=tab-control]:nth-of-type(3):checked ~ .slider {
+    transform: translateX(200%);
+  }
+  .tabs input[name=tab-control]:nth-of-type(3):checked ~ .content > section:nth-child(3) {
+    display: block;
+  }
+  .tabs input[name=tab-control]:nth-of-type(4):checked ~ ul > li:nth-child(4) > label {
+    cursor: default;
+    color: #428bff;
+  }
+  .tabs input[name=tab-control]:nth-of-type(4):checked ~ ul > li:nth-child(4) > label svg {
+    fill: #428bff;
+  }
+  @media (max-width: 600px) {
+    .tabs input[name=tab-control]:nth-of-type(4):checked ~ ul > li:nth-child(4) > label {
+      background: rgba(0, 0, 0, 0.08);
+    }
+  }
+  .tabs input[name=tab-control]:nth-of-type(4):checked ~ .slider {
+    transform: translateX(300%);
+  }
+  .tabs input[name=tab-control]:nth-of-type(4):checked ~ .content > section:nth-child(4) {
+    display: block;
+  }
+  @-webkit-keyframes content {
+    from {
+      opacity: 0;
+      transform: translateY(5%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @keyframes content {
+    from {
+      opacity: 0;
+      transform: translateY(5%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @media (max-width: 1000px) {
+    .tabs ul li label {
+      white-space: initial;
+    }
+    .tabs ul li label br {
+      display: initial;
+    }
+    .tabs ul li label svg {
+      height: 1.5em;
+    }
+  }
+  @media (max-width: 600px) {
+    .tabs ul li label {
+      padding: 5px;
+      border-radius: 5px;
+    }
+    .tabs ul li label span {
+      display: none;
+    }
+    .tabs .slider {
+      display: none;
+    }
+    .tabs .content {
+      margin-top: 20px;
+    }
+    .tabs .content section h2 {
+      display: block;
+    }
+  }
+
+  .pdf-viewer {
+    width: 100%; 
+    height: 800px; 
+  }
