@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article</title>
+
+    <link rel="icon" type="image/png" href="./images/team logo.png" sizes="16x16">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/Article.css">
+
+</head>
+<body>
+     <!-- 导航栏 -->     
+     <div class="container-fluid">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+            <li><a id="len1" class="hoverable" href="index.html">HOME</a></li>
+            <li><a id="len2" class="hoverable" href="Project.html">Project</a></li>
+            <li><a id="len3" class="hoverable" href="Article.html" style="color:white">Article</a></li>
+            <li><a id="len5" class="hoverable" href="Team.html">Team</a></li>
+            </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- END -->
+
+    <div id="logo">
+        <img src="./images/team logo.png" alt="TeamLogo">
+    </div>
+
+    <!-- 文章主体 -->
+    <section class="candy-wrapper">
+      
+      <div class="tabs">
+        <input type="radio" id="tab1" name="tab-control" checked>
+        <input type="radio" id="tab2" name="tab-control">
+
+        <ul>
+        <li title="Features"><label for="tab1" role="button"><svg t="1728057861497" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4283"><path d="M661.648 118H249.104c-39.088 0-70.304 31.752-70.304 70.304v647.392c0 39.096 31.752 70.304 70.304 70.304h525.8c38.552 0 70.296-31.752 70.296-70.304V301.56L661.648 118z m12.664 74.704l96.176 96.184H684.584c-5.408 0-10.272-4.864-10.272-10.272V192.704z m126.928 642.992a26.24 26.24 0 0 1-26.344 26.352H249.104a26.24 26.24 0 0 1-26.344-26.352V188.304a26.24 26.24 0 0 1 26.344-26.344v-0.464h381.328v117.192c0 29.824 24.416 54.16 54.16 54.16h116.656v502.848z" p-id="4284"></path><path d="M348.68 386.072h188.968a21.84 21.84 0 0 0 21.944-21.936 21.84 21.84 0 0 0-21.944-21.944H348.68a21.832 21.832 0 0 0-21.944 21.944 21.84 21.84 0 0 0 21.944 21.936zM674.848 644.8H348.68c-12.208 0-21.944 9.744-21.944 21.944s9.736 21.944 21.944 21.944h326.168c12.208 0 21.944-9.744 21.944-21.944S687.064 644.8 674.848 644.8zM348.68 495.856a21.824 21.824 0 0 0-21.944 21.944 21.832 21.832 0 0 0 21.944 21.936h326.168a21.832 21.832 0 0 0 21.944-21.936 21.832 21.832 0 0 0-21.944-21.944H348.68z" p-id="4285"></path></svg><br><span>Report</span></label></li>
+
+        <li title="Delivery Contents"><label for="tab2" role="button"><svg viewBox="0 0 24 24"><path d="M2,10.96C1.5,10.68 1.35,10.07 1.63,9.59L3.13,7C3.24,6.8 3.41,6.66 3.6,6.58L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.66,6.72 20.82,6.88 20.91,7.08L22.36,9.6C22.64,10.08 22.47,10.69 22,10.96L21,11.54V16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V10.96C2.7,11.13 2.32,11.14 2,10.96M12,4.15V4.15L12,10.85V10.85L17.96,7.5L12,4.15M5,15.91L11,19.29V12.58L5,9.21V15.91M19,15.91V12.69L14,15.59C13.67,15.77 13.3,15.76 13,15.6V19.29L19,15.91M13.85,13.36L20.13,9.73L19.55,8.72L13.27,12.35L13.85,13.36Z" />
+        </svg><br><span>Supplementary</span></label></li>
+
+        </ul>
+
+      <div class="content">
+        <section>
+          <embed src="assets/正文.pdf" class="pdf-viewer"></embed>
+        </section>
+
+        <section>
+          <embed src="assets/支持信息.pdf"class="pdf-viewer"></embed>
+        </section>
+      </div>
+        
+    </div>
+    </section>
+
+
+    <footer>
+        <p>sonsor</p>
+    </footer>
+    
+     <!-- js code -->
+     <script>
+        // 导航栏动画
+        $(function(){
+          var str = '#len'; //increment by 1 up to 1-nelemnts
+          $(document).ready(function(){
+            var i, stop;
+            i = 1;
+            stop = 5; //num elements
+            setInterval(function(){
+              if (i > stop){
+                return;
+              }
+              $('#len'+(i++)).toggleClass('bounce');
+            }, 500)
+          });
+        });
+        // END
+  
+      </script>
+
+</body>
+</html>
